@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import RequestForm from "@/components/RequestForm";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Process from "@/components/Process";
@@ -16,6 +17,10 @@ export default function Home() {
     <main className="overflow-x-hidden">
       <Navbar />
       <Hero />
+
+      {/* 🔥 HIGH-CONVERSION EMERGENCY FORM */}
+      <RequestForm />
+
       <About />
       <Services />
       <Process />

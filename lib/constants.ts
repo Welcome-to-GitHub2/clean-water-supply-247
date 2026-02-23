@@ -2,7 +2,7 @@
 export const BUSINESS_INFO = {
   name: 'Clean Water Supply',
   phone: '0734634306',
-  email: 'cleanwatersupply247@gmail.com',
+  email: 'info@cleanwatersupply247.co.za',
   whatsappLink: 'https://wa.me/27734634306',
   location: 'Gauteng, South Africa',
   tagline: 'Professional Bulk Water Delivery Services',
@@ -119,7 +119,7 @@ export const WHY_CHOOSE_US = [
   },
   {
     title: 'Large Fleet',
-    description: 'Modern fleet of water tankers from 5,000L to 30,000L capacity.',
+    description: 'Modern fleet of water tankers starting from 10,000L capacity – no upper limit for your bulk needs.',
   },
 ];
 
