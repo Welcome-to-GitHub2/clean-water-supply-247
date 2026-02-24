@@ -3,33 +3,59 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://cleanwatersupply247.co.za"),
+  metadataBase: new URL("https://www.cleanwatersupply247.co.za"),
   title: {
-    default:
-      "Emergency Bulk Water Delivery in Gauteng | Pretoria & Johannesburg 24/7",
+    default: "Emergency Bulk Water Delivery in Gauteng | Pretoria & Johannesburg 24/7",
     template: "%s | Clean Water Supply 24/7",
   },
   description:
-    "Clean Water Supply 24/7 provides emergency bulk water delivery across Gauteng including Pretoria, Johannesburg, Centurion and Midrand. 24/7 water tanker services for homes, swimming pools and construction sites.",
-  
-    icons: {
+    "24/7 emergency bulk clean water delivery across Gauteng (Pretoria, Johannesburg, Centurion, Midrand, Sandton & more). Reliable tanker services for homes, JoJo tanks, swimming pools, and construction sites.",
+  keywords: [
+    "bulk water delivery Gauteng",
+    "emergency water supply Johannesburg",
+    "JoJo tank refill Pretoria",
+    "water tanker service Centurion",
+    "swimming pool water delivery",
+    "construction water supply Midrand",
+    "24/7 water delivery Gauteng",
+  ],
+  icons: {
     icon: "/icon.png",
     apple: "/apple-icon.png",
   },
-  
-    openGraph: {
-    title:
-      "Emergency Bulk Water Delivery in Gauteng | 24/7 Water Supply Services",
+  openGraph: {
+    title: "Emergency Bulk Water Delivery in Gauteng | 24/7 Water Supply Services",
     description:
-      "Fast and reliable bulk water delivery across Pretoria, Johannesburg and surrounding Gauteng areas. Available 24/7.",
-    url: "https://cleanwatersupply247.co.za",
+      "Fast, reliable, and SANS-compliant bulk water delivery across Gauteng. Available 24/7 for homes, pools, estates, and construction sites.",
+    url: "https://www.cleanwatersupply247.co.za",
     siteName: "Clean Water Supply 24/7",
+    images: [
+      {
+        url: "/og-image.jpg", // ← Add a real 1200x630 OG image in /public if you have one
+        width: 1200,
+        height: 630,
+        alt: "Clean Water Supply 24/7 Tanker Truck",
+      },
+    ],
     locale: "en_ZA",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Emergency Bulk Water Delivery in Gauteng | 24/7",
+    description:
+      "24/7 clean water tanker delivery for JoJo tanks, pools & construction in Gauteng.",
+    images: ["/og-image.jpg"], // Same as OG
   },
   robots: {
     index: true,
     follow: true,
+  },
+  // Facebook domain verification (this outputs the required meta tag)
+  verification: {
+    other: {
+      "facebook-domain-verification": "95bmveum0ritp3pu93zico5tn362m9",
+    },
   },
 };
 
@@ -46,15 +72,14 @@ export default function RootLayout({
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://cleanwatersupply247.co.za/#localbusiness",
     name: "Clean Water Supply 24/7",
-    url: "https://cleanwatersupply247.co.za",
-    logo: "https://cleanwatersupply247.co.za/logo.png",
-    image: "https://cleanwatersupply247.co.za/logo.png",
+    url: "https://www.cleanwatersupply247.co.za",
+    logo: "https://www.cleanwatersupply247.co.za/logo.png",
+    image: "https://www.cleanwatersupply247.co.za/logo.png",
     telephone: "+27734634306",
     priceRange: "$$",
     description:
-      "24/7 emergency bulk water delivery service across Gauteng including Pretoria, Johannesburg, Centurion and Midrand.",
+      "24/7 emergency bulk clean water delivery service across Gauteng including Pretoria, Johannesburg, Centurion, Midrand, Sandton, Randburg, Kempton Park and surrounding areas.",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Pretoria",
@@ -72,28 +97,24 @@ export default function RootLayout({
       { "@type": "City", name: "Johannesburg" },
       { "@type": "City", name: "Centurion" },
       { "@type": "City", name: "Midrand" },
-      { "@type": "City", name: "Centurion" },
       { "@type": "City", name: "Sandton" },
-      { "@type": "City", name: "Randburg"},
-      { "@type": "City", name: "Kempton Park"},
-      { "@type": "City", name: "ANYWHERE around GAUTENG!!"},
+      { "@type": "City", name: "Randburg" },
+      { "@type": "City", name: "Kempton Park" },
     ],
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday",
-        ],
-        opens: "00:00",
-        closes: "23:59",
-      },
-    ],
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
+      opens: "00:00",
+      closes: "23:59",
+    },
     sameAs: [
       "https://www.facebook.com/cleanwatersupply247",
       "https://wa.me/27734634306",
@@ -116,7 +137,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        {/* 🔵 GOOGLE ANALYTICS (Replace with your real ID) */}
+        {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-4WEYCZHW26"
           strategy="afterInteractive"
@@ -129,10 +150,12 @@ export default function RootLayout({
             gtag('config', 'G-4WEYCZHW26');
           `}
         </Script>
+
+        {/* Optional: Add more head tags here if needed in future */}
       </head>
 
       <body className="bg-white text-gray-900 font-sans antialiased">
-        {/* 🔎 Structured Data */}
+        {/* Structured Data (JSON-LD) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
